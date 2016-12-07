@@ -1,0 +1,454 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    
+    <script type="text/javascript" src="~/Scripts/zz-navigation.js"></script>
+    <link href="~/Content/zz-navigation.css" rel="stylesheet" />
+
+    <script>
+       //Fonts from typekit - Baskerville
+      (function(d) {
+        var config = {
+          kitId: 'gfn6ymm',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @*SLIDER REVOLUTION (Front page presentation*@
+    @Styles.Render("~/revolution/css")
+    <script type="text/javascript" src="~/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="~/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+
+    <script type="text/javascript" src="~/Scripts/jquery-scrollto.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.easing.js"></script>
+</head>
+<body>
+    @*HEADER - Start*@
+    <div class="container-fluid">
+        <div class="navbar navbar-inverse navbar-fixed-top navbar-right">
+            <!-- .container-fluid for full screen width and .container for normal content width.  -->
+            <div class="nav-top">
+                <div class="navbar-search">
+                    <a><span class="glyphicon glyphicon-search" style="float: left; padding-right: 5px;"></span> <div class="navbar-search-title" style="float: left; padding-left: 4px;">SEARCH</div></a>
+                </div>
+                <div class="navbar-logo">
+                    <div class="centered-logo">
+                        <img src="~/Content/images/transparent.png" class="zinzino-header-logo" />
+                    </div>
+                </div>
+                <div class="navbar-menu" style="border: 1px solid black;">
+                    <div class="navbar-header">
+                        <div class="menutitle">MENU</div>
+                        <button type="button" class="navbar-toggle" id="menu-open-button">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>   
+                            <span class="icon-bar"></span>                            
+                        </button> 
+                        
+                    </div>
+                    <div class="zinzino-navbar-collapse">
+                        <div class="desktopmenu-top">
+                            <div class="navbar-collapse-title">MENU</div><div class="navbar-collapse-close"><span id="menu-close-button" class="glyphicon glyphicon-remove"></span></div>
+                        </div>
+                        <div class="mobilemenu-top">
+                            <div class="navbar-collapse-language col-sm-12">UNITED STATES (ENG)</div><div class="navbar-collapse-partnerweb col-sm-12">PARTNERWEB</div>
+                        </div>
+                        <div class="navbar-collapse-divider"></div>
+                            <ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Front Page", "FrontPage", "Designviews")</li>
+                                <li>@Html.ActionLink("Products", "Products", "Designviews")</li>
+                                <li>@Html.ActionLink("Products Detail", "ProductsDetail", "Designviews")</li>
+                                <li>@Html.ActionLink("Elements", "Elements", "Designviews")</li>
+                                <li>@Html.ActionLink("Cart", "Cart", "Designviews")</li>
+                                <li>@Html.ActionLink("Modal Collection", "ModalCollection", "Designviews")
+                                
+                                    <ul class="gw-nav gw-nav-list mobile-subnav">
+                                        <li class="init-arrow-down">
+                                            <a class="submenu-link" href="javascript:void(0)"> <span class="gw-menu-text"><b>Balance</b></span> <b class="gw-arrow"></b> </a>
+                                            <ul class="gw-submenu">
+                                                <li> <a class="submenu-link" href="javascript:void(0)">-Menu 1</a> </li>
+                                                <li> <a class="submenu-link" href="javascript:void(0)">-Menu 2</a> </li>
+                                                <li> <a class="submenu-link" href="javascript:void(0)">-Menu 3</a> </li>
+                                            </ul>
+                                        </li>
+                                        <li class="init-un-active"> <a class="submenu-link" href="javascript:void(0)"> <span class="gw-menu-text"><b>Immune</b></span> </a> </li>
+                                        <li class="init-arrow-down">
+                                            <a class="submenu-link" href="javascript:void(0)"> <span class="gw-menu-text"><b>Weight Control</b></span> <b class="gw-arrow"></b> </a>
+                                            <ul class="gw-submenu">
+                                                <li> <a class="submenu-link" href="javascript:void(0)">-Menu 1</a> </li>
+                                                <li> <a class="submenu-link" href="javascript:void(0)">-Menu 2</a> </li>
+                                                <li> <a class="submenu-link" href="javascript:void(0)">-Menu 3</a> </li>
+                                            </ul>
+                                        </li>
+                                        <li class="init-arrow-down">
+                                            <a class="submenu-link" href="javascript:void(0)"> <span class="gw-menu-text"><b>Skin</b></span> <b class="gw-arrow icon-arrow-up8"></b> </a>
+                                            <ul class="gw-submenu">
+                                                <li> <a class="submenu-link" href="javascript:void(0)">-Menu 1</a> </li>
+                                                <li> <a class="submenu-link" href="javascript:void(0)">-Menu 2</a> </li>
+                                                <li> <a class="submenu-link" href="javascript:void(0)">-Menu 3</a> </li>
+                                            </ul>
+                                        </li>
+                                        @*Active link:
+            First level:    <li class="arrow-up-active init-arrow-up active">
+
+            Second level:   <li class="arrow-up-active init-arrow-up">
+                                <ul class="gw-submenu" style="display: block;">
+                                    <li class="active">
+                                        *@
+                                        <li class="arrow-up-active init-arrow-up">
+                                            <a class="submenu-link" href="javascript:void(0)"> <span class="gw-menu-text"><b>Beverages</b></span> <b></b> </a>
+                                            <ul class="gw-submenu  mobile-subnav" style="display: block;">
+                                                <li class="active"> <a href="javascript:void(0)">-Cups & Glasses</a> </li>
+                                                <li> <a href="javascript:void(0)">-Coffee pods</a> </li>
+                                                <li> <a href="javascript:void(0)">-Espresso machines</a> </li>
+                                                <li> <a href="javascript:void(0)">-Campaigns</a> </li>
+                                                <li> <a href="javascript:void(0)">-Tea</a> </li>
+                                                <li> <a href="javascript:void(0)">-Sweets</a> </li>
+                                                <li> <a href="javascript:void(0)">-Accessories</a> </li>
+                                                <li> <a href="javascript:void(0)">-Coffee pods Big pack</a> </li>
+                                                <li> <a href="javascript:void(0)">-Tea Big pack</a> </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                    <EM>
+                                        <ul class="gw-nav gw-nav-list">
+                                            <li class="init-un-active"><a class="submenu-link">Most popular</a></li>
+                                            <li class="init-un-active"><a class="submenu-link">Special offers</a></li>
+                                            <li class="init-un-active"><a class="submenu-link">News</a></li>
+                                            <li class="init-un-active"><a class="submenu-link">Subscription products</a></li>
+                                            <li class="init-un-active"><a class="submenu-link">Promotional material</a></li>
+                                        </ul>
+                                    </EM>
+                                
+                                </li>
+                            </ul>
+                            @*<ul class="nav navbar-nav mobile-subnav">
+                                <li><a class="active">Balance</a></li>
+                                <li><a class="">Immune</a></li>
+                                <li><a class="">Weight control</a></li>
+                                <li><a class="">Skin</a></li>
+                                <li><a class="">Beverages</a></li>
+                                <li><a class=""><EM>Most popular</EM></a></li>
+                                <li><a class=""><EM>Special offers</EM></a></li>
+                                <li><a class=""><EM>News</EM></a></li>
+                                <li><a class=""><EM>Subscription products</EM></a></li>
+                                <li><a class=""><EM>Promotion material</EM></a></li>
+                            </ul>*@
+                        </div>
+                </div>
+            </div>
+            <div class="nav-bottom">
+                <div class="navbar-login">
+                    <div style="float:left"><a href="">LOGIN</a></div><div class="partner-link-desktop" style="float:left"><span class="word-divider">|</span><a href="">PARTNER</a></div>
+                </div>
+                <div class="navbar-lang">
+                    <div style="float:right"><a href=""><span class="glyphicon glyphicon-shopping-cart" style="padding-right: 5px;"></span>SHOP</a></div><div class="language-link-desktop" style="float:right"><a href="">NORWAY (ENG)</a><span class="word-divider">|</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*HEADER - End*@
+
+    <div class="container-fluid body-content" style="min-height: 700px;">            
+        @RenderBody()
+    </div>
+
+    <!-- IMAGE MODAL -->
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="imagepreview">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer id="footer" class="footer solid-bg empty-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-15 col-sm-3" id="footer-col-left">
+                    YOUR HEALTH<br />
+                    Balance test<br />
+                    Our research
+                </div>
+                <div class="col-md-15 col-sm-3" id="footer-col-left">
+                    CUSTOMER SERVICE<br />
+                    Contact sales help<br />
+                    Contact HQ<br />
+                    How to become a customer<br />
+                    FAQ<br />
+                    Sitemap
+                </div>
+                <div class="col-md-15 col-sm-3" id="footer-col-center">
+                    <img src="~/Content/images/Zinzino-grey-logo.png" width="100" />
+                </div>
+                <div class="col-md-15 col-sm-3" id="footer-col-right">
+                    CORPORATE INFO<br />
+                    Business network<br />
+                    Investor relations<br />
+                    Board and Management<br />
+                    Fairtrade<br />
+                    Press
+                </div>
+                <div class="col-md-15 col-sm-3" id="footer-col-right">
+                    BUSINESS OPPORTUNITY<br />
+                    Partner program<br />
+                    How to become a partner
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    @Html.Partial("Partials/_Modals")
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    
+    <script src="~/Scripts/jquery.fullPage.js"></script>
+    <script type="text/javascript">
+        $("#pop").on("click", function () {
+            $('#imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
+            $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+        });
+
+
+        //Shrink the header when scrolling down. Add/Remove classes and change logo
+        $(window).scroll(function () {
+            if (($(document).scrollTop() > 50)) {
+                if (!($('.nav-top').hasClass('shrink'))){
+                    $('.navbar').addClass('shrink');
+                    $('.nav-top').addClass('shrink');
+                    $('.nav-bottom').addClass('shrink');
+                    $('.zinzino-navbar-collapse').addClass('shrink');
+                    $('.navbar-header').addClass('shrink');
+                    $('.navbar-toggle').addClass('shrink');
+                    $('.menutitle').addClass('shrink');
+                    $('.navbar-logo').addClass('shrink');
+                    $('.zinzino-header-logo').addClass('shrink');
+                }
+            } else {
+                $('.navbar').removeClass('shrink');
+                $('.nav-top').removeClass('shrink');
+                $('.nav-bottom').removeClass('shrink');
+                $('.zinzino-navbar-collapse').removeClass('shrink');
+                $('.navbar-header').removeClass('shrink');
+                $('.navbar-toggle').removeClass('shrink');
+                $('.menutitle').removeClass('shrink');
+                $('.navbar-logo').removeClass('shrink');
+                $('.zinzino-header-logo').removeClass('shrink');
+            }
+        });
+
+        //Allow details-tab to be collapsed
+        $('#details-tab a').click(function (e) {
+            var tab = $(this);
+            if (tab.parent('li').hasClass('active')) {
+                window.setTimeout(function () {
+                    $(".tab-pane-parent").removeClass('active');
+                    tab.parent('li').removeClass('active');
+                }, 1);
+            }
+        });
+
+        //AUTO-SCROLL TO CONTENT
+        var inscroll = false;
+
+        //Auto-scroll on click
+        $($('div[id=slider-scroll-down-button]')).click(function () {
+            inscroll = true;
+            $('body').scrollTo('#scroll-to-here');
+            setTimeout(function () {
+                inscroll = false;
+            }, 2000);
+        });
+
+        //Detect scroll direction and scroll down to content-section if scrolling down on the first viewport-area.
+        // 'lastScrollTop' and 'st' is to keep track of the scrolling direction.
+        var lastScrollTop = 0;
+        var scrollbarDown = false;
+        var viewPortHeight;
+
+        //$(window).scroll(function (e) {
+        //    viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+        //    var st = $(this).scrollTop();
+
+        //    //Check if mousedown on browsers scrollbar. If so, don't autoscroll (it wont look good)
+        //    $(document).mousedown(function (event) {
+        //        if (event.target === $('html')[0] && event.clientX >= document.documentElement.offsetWidth){
+        //            scrollbarDown = true;
+        //        }
+        //        else {
+        //            scrollbarDown = false;
+        //        }
+        //    }).mouseup(function (event) { scrollbarDown = false; }); //Autoscroll when scrollbar is released.
+
+        //    //Autoscroll if it hasn't already started and if scrollBarDown=false.
+        //    if ((!inscroll) && (scrollbarDown == false)) {
+                
+        //        // If viewport is on the first top half of the page and scrolling down - autoscroll to the div with #scroll-to-here
+        //        if (($(window).scrollTop() < (viewPortHeight / 2)) && ($(window).scrollTop() > 2) && (st > lastScrollTop)) {
+        //            inscroll = true;
+        //            //$('body').scrollTo('#scroll-to-here');
+        //            $('body').scrollTo(viewPortHeight);
+        //            setTimeout(function () {
+        //                inscroll = false;
+        //                //enableScroll();
+        //            }, 1000);
+        //        }
+        //        // If viewport is on the second top half of the page and scrolling up - autoscroll to the top
+        //        else if (($(window).scrollTop() < viewPortHeight - 10) && ($(window).scrollTop() > (viewPortHeight/2)) && (st < lastScrollTop)) {
+        //            inscroll = true;
+        //            $('body').scrollTo(0);
+        //            setTimeout(function () {
+        //                inscroll = false;
+        //                //enableScroll();
+        //            }, 1000);
+        //            lastScrollTop = 0;
+        //        }
+        //    }
+        //    lastScrollTop = st;
+        //    return false;
+        //});
+    </script>
+    <script type="text/javascript">
+						/******************************************
+				-	PREPARE PLACEHOLDER FOR SLIDER	-
+			******************************************/
+
+			var setREVStartSize=function(){
+				try{var e=new Object,i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
+					e.c = jQuery('#rev_slider_zz');
+					e.gridwidth = [1240];
+					e.gridheight = [868];
+
+					e.sliderLayout = "fullscreen";
+					e.fullScreenAutoWidth='off';
+					e.fullScreenAlignForce='off';
+					e.fullScreenOffsetContainer= '';
+					e.fullScreenOffset='';
+					if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})
+
+				}catch(d){console.log("Failure at Presize of Slider:"+d)}
+			};
+
+
+			setREVStartSize();
+			function revslider_showDoubleJqueryError(sliderID) {
+					var errorMessage = "Revolution Slider Error: You have some jquery.js library include that comes after the revolution files js include.";
+					errorMessage += "<br> This includes make eliminates the revolution slider libraries, and make it not work.";
+					errorMessage += "<br><br> To fix it you can:<br>&nbsp;&nbsp;&nbsp; 1. In the Slider Settings -> Troubleshooting set option:  <strong><b>Put JS Includes To Body</b></strong> option to true.";
+					errorMessage += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jquery.js include and remove it.";
+					errorMessage = "<span style='font-size:16px;color:#BC0C06;'>" + errorMessage + "</span>";
+						jQuery(sliderID).show().html(errorMessage);
+				}
+						var tpj=jQuery;
+
+			var revapi2;
+			tpj(document).ready(function() {
+				if(tpj("#rev_slider_zz").revolution == undefined){
+					revslider_showDoubleJqueryError("#rev_slider_zz");
+				}else{
+					revapi2 = tpj("#rev_slider_zz").show().revolution({
+						sliderType:"standard",
+                        jsFileLocation:"/revolution/js/",
+                        sliderLayout: "fullscreen",
+                        dottedOverlay: "none",
+                        delay: 9000,
+                        navigation: {
+                            keyboardNavigation: "off",
+                            keyboard_direction: "horizontal",
+                            mouseScrollNavigation: "off",
+                            onHoverStop: "off",
+                            touch: {
+                                touchenabled: "on",
+                                swipe_threshold: 75,
+                                swipe_min_touches: 1,
+                                swipe_direction: "horizontal",
+                                drag_block_vertical: false
+                            }
+							,
+                            arrows: {
+                                style: "persephone",
+                                enable: true,
+                                hide_onmobile: true,
+                                hide_under: 768,
+                                hide_onleave: false,
+                                tmp: '',
+                                left: {
+                                    h_align: "left",
+                                    v_align: "center",
+                                    h_offset: 20,
+                                    v_offset: 0
+                                },
+                                right: {
+                                    h_align: "right",
+                                    v_align: "center",
+                                    h_offset: 20,
+                                    v_offset: 0
+                                }
+                            }
+                        },
+                        visibilityLevels: [1240, 1024, 778, 480],
+                        gridwidth: 1240,
+                        gridheight: 868,
+                        lazyType: "none",
+                        shadow: 0,
+                        spinner: "spinner0",
+                        stopLoop: "off",
+                        stopAfterLoops: -1,
+                        stopAtSlide: -1,
+                        shuffle: "off",
+                        autoHeight: "off",
+                        fullScreenAutoWidth: "off",
+                        fullScreenAlignForce: "off",
+                        fullScreenOffsetContainer: "",
+                        fullScreenOffset: "",
+                        disableProgressBar: "on",
+                        hideThumbsOnMobile: "off",
+                        hideSliderAtLimit: 0,
+                        hideCaptionAtLimit: 0,
+                        hideAllCaptionAtLilmit: 0,
+                        debugMode: false,
+                        fallbacks: {
+                            simplifyAll: "off",
+                            nextSlideOnWindowFocus: "off",
+                            disableFocusListener: false,
+                        }
+					});
+				}
+			});	/*ready*/
+
+            // OPEN/CLOSE MAIN MENU
+			$('#menu-close-button').on('click', function () {
+			    $('.zinzino-navbar-collapse').css('right', '-410px');
+			    $('.zinzino-navbar-collapse').toggleClass('show-hide-menu');
+			});
+			$('#menu-open-button').on('click', function () {
+			    if ($('.zinzino-navbar-collapse').hasClass('show-hide-menu')) {
+			        $('.zinzino-navbar-collapse').css('right', '-410px');
+			    } else {
+			        $('.zinzino-navbar-collapse').css('right', '0px');
+			    }
+			    $('.zinzino-navbar-collapse').toggleClass('show-hide-menu');			    
+			});
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "ProductsDetail";
+}
+
+@*PRODUCTS PAGE, SELECTED ITEM - Start*@
+<div class="container body-margin">
+
+    @Html.Partial("Partials/_SubMenu")
+
+    <div class="col-sm-8 col-md-9">
+        <div class="row">
+            <div class="col-sm-4" id="pop">
+                <img id="imageresource" src="~/Content/images/balance-oil-capsules-tr.png" style="width: 100%; height: auto;" />
+            </div>
+            <div class="col-sm-8">
+                <h3>BalanceOil Capsules</h3>
+                <h5>120 capsules</h5>
+                <p>BalanceOil Capsules are exactly what it sounds like: BalanceOil, conveniently packaged in capsules that effectively adjust the fatty acid balance of the body.* The oil consists of the essential omega-3 fatty acids EPA and DHA from fish oil and polyphenols from extra virgin olive oil.</p>
+                <p>With BalanceOil Capsules, it is easy to get in balance and keep it. You don’t need any dosage tools and you avoid making dishes dirty, which makes them perfect for bringing with you when traveling.</p>
+                <div class="pricing">
+                    <span class="your-price">399,00 kr</span> Your price
+                    <div class="pricing-border"></div>
+                    <span class="premium-price">399,00 kr</span> Premium price
+                    <span class="glyphicon glyphicon-question-sign help-sign"></span>
+                </div>
+                <div class="add-to-cart-form">
+                    <form>
+                        <input type="text" class="add-to-cart-number" value="1" />
+                        <button class="btn zinzino-btn">SUBSCRIBE</button>
+                        <button class="btn zinzino-btn">ADD TO CART</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row spacer">
+            <div class="col-sm-12">
+                <div class="product-details">
+                    <ul class="nav nav-tabs" id="details-tab">
+                        <li><a data-target="#home" data-toggle="tab" style="cursor:pointer">Product Details <span class="glyphicon glyphicon-triangle-right"></span></a></li>
+                        <li><a data-target="#profile" data-toggle="tab" style="cursor:pointer">FAQ <span class="glyphicon glyphicon-triangle-right"></span></a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane tab-pane-parent fade" id="home">
+                            @*Nested tab - start*@
+                            <div class="product-sub-details">
+                                <ul class="nav nav-tabs" id="details-sub-tab">
+                                    <li class="active"><a data-target="#homesub" data-toggle="tab" style="cursor:pointer">Product Details <span class="glyphicon glyphicon-triangle-right"></span></a></li>
+                                    <li><a data-target="#profilesub" data-toggle="tab" style="cursor:pointer">A synergistic formula <span class="glyphicon glyphicon-triangle-right"></span></a></li>
+                                    <li><a data-target="#profilesub" data-toggle="tab" style="cursor:pointer">Supplement facts <span class="glyphicon glyphicon-triangle-right"></span></a></li>
+                                    <li><a data-target="#profilesub" data-toggle="tab" style="cursor:pointer">Download product sheet <span class="glyphicon glyphicon-triangle-right"></span></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active in" id="homesub">
+                                        <h3>Product Description</h3>
+                                        Right now we have 50% off on BalanceOil Capsules. The offer is valid while supplies last. Note that the product best before date is in May 2016.
+                                        <br /><br />
+                                        Product Sheet BalanceOil Capsules (USA)
+                                        <br /><br />
+                                        <b>CONTAINS:</b> ANCHOVY, MACKEREL, SARDINE.
+                                        <br /><br />
+                                        <b>SUGGESTED USE:</b> 3 capsules per 20 kg/44 lb body weight. Adult weighing 60 kg/132 lb: 9 capsules a day, adult weighing 80 kg/176 lb: 12 capsules a day. The recommended dose should not be exceeded.
+                                        <br /><br />
+                                        <b>WARNING:</b> Consult your physician before using BalanceOil™ Capsules if you are pregnant,  nursing, taking prescription drugs or have a medical condition. Consult with your physician or health care practitioner before giving this product to children.
+                                        <br /><br />
+                                        <b>STORAGE:</b> Keep unopened boxes at room temperature in a dark, dry place. Keep opened boxes at room temperature in a dark, dry place and use within 90 days. Keep out of the reach of children.
+                                    </div>
+                                    <div class="tab-pane fade" id="profilesub">
+                                        <h3>A synergistic formula</h3>
+                                    </div>
+                                    <div class="tab-pane fade" id="profilesub">
+                                        <h3>Supplement facts</h3>
+                                    </div>
+                                    <div class="tab-pane fade" id="profilesub">
+                                        <h3>Download product sheet</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            @*Nested tab - end*@
+                        </div>
+                        <div class="tab-pane tab-pane-parent fade" id="profile">
+                            <h3>FAQ</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12"><h3 class="subheader">RELATED PRODUCTS</h3></div>
+            <div class="clearfix"></div>
+            <div class="col-sm-6 col-md-4 product-list-item">
+                <div class="product-thumbnail"><img src="~/Content/images/balance-oil-capsules.png" /></div>
+                <div class="add-to-cart-small-form">
+                    <h3>BalanceOil Capsules</h3>
+                    <span>120 capsules</span>
+                    <div class="pricing">
+                        <span class="your-price">399,00 kr</span> Your price
+                        <div class="pricing-border"></div>
+                        <span class="premium-price">399,00 kr</span> Premium price
+                        <span class="glyphicon glyphicon-question-sign help-sign"></span>
+                    </div>
+                    <form>
+                        <div style="display:table; width:100%;">
+                            <div style="display:table-row;">
+                                <div style="display:table-cell; width: 30px;"> <input type="text" class="add-to-cart-number" value="1" /> </div>
+                                <div style="display:table-cell; padding-right: 3px;"> <button class="btn zinzino-btn" style="width:98%">SUBSCRIBE</button> </div>
+                                <div style="display:table-cell; padding-left: 3px;"> <button class="btn zinzino-btn" style="width:98%">ADD TO CART</button> </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-sm-6 col-md-4 product-list-item">
+                <div class="product-thumbnail"><img src="~/Content/images/balance-oil-capsules.png" /></div>
+                <div class="add-to-cart-small-form">
+                    <h3>BalanceOil Capsules</h3>
+                    <span>120 capsules</span>
+                    <div class="pricing">
+                        <span class="your-price">399,00 kr</span> Your price
+                        <div class="pricing-border"></div>
+                        <span class="premium-price">399,00 kr</span> Premium price
+                        <span class="glyphicon glyphicon-question-sign help-sign"></span>
+                    </div>
+                    <form>
+                        <div style="display:table; width:100%;">
+                            <div style="display:table-row;">
+                                <div style="display:table-cell; width: 30px;"> <input type="text" class="add-to-cart-number" value="1" /> </div>
+                                <div style="display:table-cell; padding-right: 3px;"> <button class="btn zinzino-btn" style="width:98%">SUBSCRIBE</button> </div>
+                                <div style="display:table-cell; padding-left: 3px;"> <button class="btn zinzino-btn" style="width:98%">ADD TO CART</button> </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-sm-6 col-md-4 product-list-item">
+                <div class="product-thumbnail"><img src="~/Content/images/balance-oil-capsules.png" /></div>
+                <div class="add-to-cart-small-form">
+                    <h3>BalanceOil Capsules</h3>
+                    <span>120 capsules</span>
+                    <div class="pricing">
+                        <span class="your-price">399,00 kr</span> Your price
+                        <div class="pricing-border"></div>
+                        <span class="premium-price">399,00 kr</span> Premium price
+                        <span class="glyphicon glyphicon-question-sign help-sign"></span>
+                    </div>
+                    <form>
+                        <div style="display:table; width:100%;">
+                            <div style="display:table-row;">
+                                <div style="display:table-cell; width: 30px;"> <input type="text" class="add-to-cart-number" value="1" /> </div>
+                                <div style="display:table-cell; padding-right: 3px;"> <button class="btn zinzino-btn" style="width:98%">SUBSCRIBE</button> </div>
+                                <div style="display:table-cell; padding-left: 3px;"> <button class="btn zinzino-btn" style="width:98%">ADD TO CART</button> </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@*PRODUCTS PAGE, SELECTED ITEM - End*@
+

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Modal Collection";
+}
+<div class="container body-margin">
+    <button type="button" class="btn zinzino-btn" data-toggle="modal" data-target="#addedToCartModal">Added to cart</button>
+    <button type="button" class="btn zinzino-btn" data-toggle="modal" data-target="#removedFromCartModal">Removed from cart</button>
+    <button type="button" class="btn zinzino-btn" data-toggle="modal" data-target="#autoOrderModal">Auto Order Modal</button>
+    <button type="button" class="btn zinzino-btn" data-toggle="modal" data-target="#editKitModal">Edit Kit Modal</button>
+    <button type="button" class="btn zinzino-btn" data-toggle="modal" data-target="#addedToKitModal">Added to Kit Modal</button>
+
+
+</div>
+
+@Html.Partial("Partials/_Modals")
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".myModalButton").click(function () {
+        $("#myModal").modal('show');
+    });
+
+    $(".myModalButton").click(function () {
+        $("#myModal").modal('show');
+    });
+});
+
+
+</script>

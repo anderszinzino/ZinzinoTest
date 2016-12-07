@@ -1,0 +1,178 @@
+﻿
+@{
+    ViewBag.Title = "Elements";
+}
+<div class="container body-margin">
+    <div class="row">
+        <div class="col-sm-2">
+            <h1>H1 Header</h1>
+            <h2>H2 Header</h2>
+            <h3>H3 Header</h3>
+            <h4>H4 Header</h4>
+            <h5>H5 Header</h5>
+        </div>
+        <div class="col-sm-5">
+            <div class="add-to-cart-form">
+                <h3>div class="add-to-cart-form" H3</h3>
+                <span>div class="add-to-cart-form" span</span>
+            </div>
+            <div class="pricing">
+                <span class="your-price">div class="pricing" span class="your-price"</span> div class="pricing"
+                <div class="pricing-border">div class="pricing-border"</div>
+                <span class="premium-price">div class="pricing" span class="premium-price"</span> div class="pricing"
+                <span class="glyphicon glyphicon-question-sign help-sign"></span>
+            </div>
+
+            
+        </div>
+        <div class="col-sm-5">
+            <div class="add-to-cart-small-form">
+                <h3>div class="add-to-cart-small-form" H3</h3>
+                <span>div class="add-to-cart-small-form" span</span>
+            </div>
+            <div class="pricing">
+                <span class="your-price">div class="pricing" span class="your-price"</span> div class="pricing"
+                <div class="pricing-border">div class="pricing-border"</div>
+                <span class="premium-price">div class="pricing" span class="premium-price"</span> div class="pricing"
+                <span class="glyphicon glyphicon-question-sign help-sign"></span>
+            </div>
+        </div>
+    </div>
+    
+    <hr />
+    <div class="row">
+        <div class="col-sm-4">
+            <h4>&lt;p&gt;&lt;/p&gt;</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nisl nunc, eleifend id est quis, lacinia hendrerit neque. Aenean viverra purus ex, eget dignissim ligula molestie sit amet. In id rhoncus sapien. Integer sed tempus odio, id dignissim enim. Aliquam blandit aliquam odio, at vestibulum nisi viverra ac.</p>
+        </div>
+        <div class="col-sm-4">
+            <h4>&lt;a&gt;&lt;/a&gt;</h4>
+            <a href="">Lorem ipsum</a> dolor sit amet, consectetur adipiscing elit. <a href="">Proin nisl nunc</a>Proin nisl nunc, eleifend id est quis, lacinia hendrerit neque. Aenean viverra purus ex, eget dignissim ligula molestie sit amet. In id rhoncus sapien. Integer sed tempus odio, id dignissim enim. Aliquam blandit aliquam odio, at vestibulum nisi viverra ac.
+        </div>
+        <div class="col-sm-4">
+            <h4>&lt;b&gt;&lt;/b&gt;</h4>
+            <p>Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit. Proin nisl nunc, eleifend id est quis, lacinia hendrerit neque.</b> Aenean viverra purus ex, eget dignissim ligula molestie sit amet. In id rhoncus sapien. Integer sed tempus odio, id dignissim enim. Aliquam blandit aliquam odio, at vestibulum nisi viverra ac.</p>
+        </div>
+        
+    </div>
+    <hr />
+    <form>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="usr">Name:</label>
+                <input type="text" placeholder="Name" class="form-control" id="usr">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd">
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+            <hr />
+            <div class="form-group has-success has-feedback">
+                <label for="inputSuccess2">Input with success</label>
+                <input type="text" class="form-control" id="inputSuccess2">
+                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+            </div>
+            <div class="form-group has-warning has-feedback">
+                <label for="inputWarning2">Input with warning</label>
+                <input type="text" class="form-control" id="inputWarning2">
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+            </div>
+            <div class="form-group has-error has-feedback">
+                <label for="inputError2">Input with error</label>
+                <input type="text" class="form-control" id="inputError2">
+                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+            <div class="form-group">
+                <label for="sel1">Select list:</label>
+                <select class="form-control" id="sel1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+
+                <div class="spacer"></div>
+
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100"
+                         aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                        100% Complete (success)
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="70"
+                         aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                        70% Complete (warning)
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40"
+                         aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                        40% Complete (danger)
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h4>div class="checkbox"</h4>
+            <div class="checkbox">
+                <label><input type="checkbox" value="">Option 1</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" value="">Option 2</label>
+            </div>
+            <div class="checkbox disabled">
+                <label><input type="checkbox" value="" disabled>Option 3</label>
+            </div>
+            <div class="small-spacer"></div>
+            <h4>div class="checkbox-inline"</h4>
+            <label class="checkbox-inline"><input type="checkbox" value="">Option 1</label>
+            <label class="checkbox-inline"><input type="checkbox" value="">Option 2</label>
+            <label class="checkbox-inline"><input type="checkbox" value="">Option 3</label>
+            <div class="small-spacer"></div>
+            <h4>div class="radio"</h4>
+            <div class="radio">
+                <label><input type="radio" name="optradio">Option 1</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">Option 2</label>
+            </div>
+            <div class="radio disabled">
+                <label><input type="radio" name="optradio" disabled>Option 3</label>
+            </div>
+            <div class="small-spacer"></div>
+            <h4>div class="radio-inline"</h4>
+            <label class="radio-inline"><input type="radio" name="optradio">Option 1</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Option 2</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Option 3</label>
+            <div class="small-spacer"></div>
+            
+            <hr />
+            <div class="col-sm-4" style="margin-bottom: 20px;"><button type="button" class="btn zinzino-btn">btn zinzino-btn</button></div>
+            <div class="col-sm-4" style="margin-bottom: 20px;"><button type="button" class="btn btn-default">btn btn-default</button></div>
+            <div class="col-sm-4" style="margin-bottom: 20px;"><button type="button" class="btn btn-primary">btn btn-primary</button></div>
+            <div class="col-sm-4" style="margin-bottom: 20px;"><button type="button" class="btn btn-success">btn btn-success</button></div>
+            <div class="col-sm-4" style="margin-bottom: 20px;"><button type="button" class="btn btn-info">btn btn-info</button></div>
+            <div class="col-sm-4" style="margin-bottom: 20px;"><button type="button" class="btn btn-warning">btn btn-warning</button></div>
+            <div class="col-sm-4" style="margin-bottom: 20px;"><button type="button" class="btn btn-danger">btn btn-danger</button></div>
+            <div class="col-sm-4" style="margin-bottom: 20px;"><button type="button" class="btn btn-link">btn btn-link</button></div>
+        </div>
+    </div>
+        
+        
+
+       
+        
+    </form>
+
+
+</div>
+

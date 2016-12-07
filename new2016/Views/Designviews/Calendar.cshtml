@@ -1,0 +1,211 @@
+﻿
+@{
+    ViewBag.Title = "Calendar";
+}
+
+<div class="container-fluid body-banner-margin">
+    <div class="clearfix"></div>
+    <div class="col-sm-12 bubble-background bubble-banner" style="height: 300px; background-image: url(/Content/images/ZZ-frontpage-1.jpg);">
+        <p></p>
+    </div>
+</div>
+<div class="container body-margin">
+    
+    <div id="zzCalendarHeader">
+        <div class="monthly-header"><div class="monthly-zinzino-title"></div></div>
+        <div class="spacer"></div>
+        <div class="row">
+            <div class="col-md-3">
+                <select class="form-control">
+                    <option>Select country</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select class="form-control">
+                    <option>Select event category</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select class="form-control">
+                    <option>Select date</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input type="search" class="form-control" placeholder="Search for an event" />
+            </div>
+        </div>
+        <hr />
+        <div class="row hidden-600">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-8" style="text-align: center">
+                BP=Business Presentation BPS=XXXXXXX E=Event  Leaderschool=Leaderschool
+            </div>
+            <div class="col-md-2">
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <a href="#" class="monthly-prev-zinzino btn zinzino-btn" style="padding:4px 29px 8px 16px; width: 30px; height:30px;"><span class="glyphicon glyphicon-triangle-left" style="font-size: 11px;"></span></a>
+                </div>
+                <div class="col-md-5">
+                    <a href="#" class="monthly-next-zinzino btn zinzino-btn" style="padding:4px 27px 8px 18px; width: 30px; height:30px;"><span class="glyphicon glyphicon-triangle-right" style="font-size: 11px;"></span></a>
+                </div>                
+            </div>
+        </div>
+        
+    </div>
+    <div class="spacer"></div>
+    <div class="monthly" id="mycalendar">
+    </div>
+    <div id="zzCalendarHeader">
+        <div class="spacer"></div>
+        <div class="row hidden-600">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <a href="#" class="monthly-prev-zinzino btn zinzino-btn" style="padding:4px 29px 8px 16px; width: 30px; height:30px;"><span class="glyphicon glyphicon-triangle-left" style="font-size: 11px;"></span></a>
+                </div>
+                <div class="col-md-5">
+                    <a href="#" class="monthly-next-zinzino btn zinzino-btn" style="padding:4px 27px 8px 18px; width: 30px; height:30px;"><span class="glyphicon glyphicon-triangle-right" style="font-size: 11px;"></span></a>
+                </div>
+            </div>
+        </div>
+        <div class="row visible-600">
+            <div class="col-xs-6">
+                <a href="#" class="monthly-prev-zinzino btn zinzino-btn" style="padding:4px 29px 8px 16px; width: 30px; height:30px;"><span class="glyphicon glyphicon-triangle-left" style="font-size: 11px;"></span></a>
+            </div>
+            <div class="col-xs-6">
+                <a href="#" class="monthly-next-zinzino btn zinzino-btn pull-right" style="padding:4px 27px 8px 18px; width: 30px; height:30px;"><span class="glyphicon glyphicon-triangle-right" style="font-size: 11px;"></span></a>
+            </div>
+        </div>
+        <div class="row visible-600">
+            <div class="col-md-8" style="text-align: center">
+                <div class="visible-600">
+                    BP=Business Presentation<br />
+                    BPS=XXXXXXX<br />
+                    E=Event<br />
+                    Leaderschool=Leaderschool<br />
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+</div>
+
+<div id="tip-wrap">
+
+    <h1><span>Bubble Point</span> Tooltips</h1>
+
+    <p>Pellentesque habitant morbi tristique <a href="#" title="I ❤ ">senectus</a> et netus et malesuada fames ac <a href="#" title="Hi, I'm a tooltip thingy.">turpis</a> egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat <a href="#" title="Ooooh<br>Look at me<br>I'm a fancy tooltip">eleifend</a> leo.</p>
+
+</div>
+
+<script type="text/javascript" src="~/Scripts/monthlyCalendar.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#mycalendar .monthly-day-event div[title]").tooltips();
+    });
+	$(window).load( function() {
+
+		
+
+		$('#mycalendar').monthly({
+			mode: 'event',
+			xmlUrl: '/Content/events.xml'
+		});
+
+		//$('#mycalendar2').monthly({
+		//	mode: 'picker',
+		//	target: '#mytarget',
+		//	startHidden: true,
+		//	showTrigger: '#mytarget',
+		//	stylePast: true,
+		//	disablePast: true
+		//});
+
+	switch(window.location.protocol) {
+	case 'http:':
+	case 'https:':
+	// running on a server, should be good.
+	break;
+	case 'file:':
+	alert('Just a heads-up, events will not work when run locally.');
+	}
+
+	});
+
+
+	// IIFE to ensure safe use of $
+	(function ($) {
+
+	    // Create plugin
+	    $.fn.tooltips = function (el) {
+
+	        var $tooltip,
+              $body = $('body'),
+              $el;
+
+	        // Ensure chaining works
+	        return this.each(function (i, el) {
+
+	            $el = $(el).attr("data-tooltip", i);
+
+	            // Make DIV and append to page 
+	            var $tooltip = $('<div class="tooltip" data-tooltip="' + i + '">' + $el.attr('title') + '<div class="arrow"></div></div>').appendTo("body");
+
+	            // Position right away, so first appearance is smooth
+	            var linkPosition = $el.position();
+
+	            $tooltip.css({
+	                top: linkPosition.top - $tooltip.outerHeight() - 13,
+	                left: linkPosition.left - ($tooltip.width() / 2)
+	            });
+
+	            $el
+                // Get rid of yellow box popup
+                .removeAttr("title")
+
+                // Mouseenter
+                .hover(function () {
+                    console.log('hover');
+                    $el = $(this);
+
+                    $tooltip = $('div[data-tooltip=' + $el.data('tooltip') + ']');
+
+                    // Reposition tooltip, in case of page movement e.g. screen resize                        
+                    var linkPosition = $el.position();
+
+                    $tooltip.css({
+                        top: linkPosition.top - $tooltip.outerHeight() - 13,
+                        left: linkPosition.left - ($tooltip.width() / 2)
+                    });
+
+                    // Adding class handles animation through CSS
+                    $tooltip.addClass("active");
+
+                    // Mouseleave
+                }, function () {
+
+                    $el = $(this);
+
+                    // Temporary class for same-direction fadeout
+                    $tooltip = $('div[data-tooltip=' + $el.data('tooltip') + ']').addClass("out");
+
+                    // Remove all classes
+                    setTimeout(function () {
+                        $tooltip.removeClass("active").removeClass("out");
+                    }, 300);
+
+                });
+
+	        });
+
+	    }
+
+	})(jQuery);
+
+
+</script>

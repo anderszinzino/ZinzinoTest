@@ -1,0 +1,644 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+
+    @*Mobile slide menu*@
+    <script src="~/Scripts/jquery.jpanelmenu.js"></script>
+    <script src="~/Scripts/jquery.jRespond.js"></script>
+
+    
+
+    <script type="text/javascript" src="~/Scripts/zz-navigation.js"></script>
+    <link href="~/Content/zz-navigation.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/monthlyCalendar.css">
+    <script type="text/javascript">
+        var isFrontPage = false;
+        var useDropDownMenu = true;
+    </script>
+    <script>
+       //Fonts from typekit - 'baskerville-urw' and 'myriad-pro'
+      (function(d) {
+        var config = {
+          kitId: 'gfn6ymm',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+
+
+    @*@Styles.Render("~/Content/css")*@
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.scss" rel="stylesheet" />
+    <link href="~/Content/jquery.fullPage.css" rel="stylesheet" />
+    <link href="~/revolution/css/settings.css" rel="stylesheet" />
+    <link href="~/revolution/css/layers.css" rel="stylesheet" />
+    <link href="~/revolution/css/navigation.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="~/Scripts/modernizr-2.6.2.js"></script>
+    @*@Scripts.Render("~/bundles/modernizr")*@
+
+    @*SLIDER REVOLUTION (Front page presentation*@
+    @*@Styles.Render("~/revolution/css")*@
+    <script type="text/javascript" src="~/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="~/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+
+    <script type="text/javascript" src="~/Scripts/jquery-scrollto.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.easing.js"></script>
+</head>
+<body>
+    @*HEADER - Start*@
+    <div class="container-fluid" id="fixed-header" style="padding-top: 66px;">
+        <div class="navbar navbar-inverse navbar-fixed-top navbar-right">
+            <!-- .container-fluid for full screen width and .container for normal content width.  -->
+            <div class="nav-top">
+                <div class="navbar-search">
+                    <a><span class="glyphicon glyphicon-search" style="float: left; padding-right: 5px;"></span> <div class="navbar-search-title" style="float: left; padding-left: 4px;">SEARCH</div></a>
+                </div>
+                <div class="navbar-logo">
+                    <div class="centered-logo">
+                        <img src="~/Content/images/transparent.png" class="zinzino-header-logo" />
+                    </div>
+                </div>
+                <div class="navbar-menu">
+                    <div class="navbar-header">
+                        <div class="menutitle">MENU</div>
+                        <button type="button" class="navbar-toggle" id="menu-open-button">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>   
+                            <span class="icon-bar"></span>                            
+                        </button> 
+                        
+                    </div>
+                    <div class="zinzino-navbar-collapse" id="zinzino-main-navbar">
+                        <div class="desktopmenu-top">
+                            <div class="navbar-collapse-title">MENU</div><div class="navbar-collapse-close"><span id="menu-close-button" class="glyphicon glyphicon-remove"></span></div>
+                        </div>
+                        <div class="mobilemenu-top">
+                            <div class="navbar-collapse-language col-xs-6">UNITED STATES (ENG)</div><div class="navbar-collapse-partnerweb col-xs-6">PARTNERWEB</div>
+                        </div>
+                        <div class="navbar-collapse-divider"></div>
+                            <ul class="mn-nav mn-nav-list">
+                                <li class="init-arrow-down"><a class="mainmenu-link" href="javascript:void(0)"> <span class="mn-menu-text">Shop</span> <span class="toggle-submenu"></span></a>
+                                    <ul class="mn-submenu">
+                                        <li class="init-un-active">@Html.ActionLink("Products", "Products", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                        <li class="init-un-active">@Html.ActionLink("Products Detail", "ProductsDetail", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                        <li class="init-un-active">@Html.ActionLink("Cart", "Cart", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                        <li class="init-arrow-down">
+                                            <a class="mainmenu-link" href="javascript:void(0)"> <span class="mn-menu-text">Level 3</span> </a>
+                                            <ul class="mn-sub-submenu">
+                                                <li class="init-un-active">@Html.ActionLink("Products", "Products", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                                <li class="init-un-active">@Html.ActionLink("Products Detail", "ProductsDetail", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                                <li class="init-un-active">@Html.ActionLink("Cart", "Cart", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="init-arrow-down">
+                                    <a class="mainmenu-link" href="javascript:void(0)"> <span class="mn-menu-text">Account</span> </a>
+                                    <ul class="mn-submenu">
+                                        <li class="init-un-active">@Html.ActionLink("Your account", "YourAccount", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                        <li class="init-un-active">@Html.ActionLink("Your details", "YourDetails", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                        <li class="init-un-active">@Html.ActionLink("Your orders", "YourOrders", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                        <li class="init-un-active">@Html.ActionLink("AutoOrder preferences", "AutoOrderPreferences", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                    </ul>
+                                </li>
+                                <li class="init-un-active">@Html.ActionLink("Home", "Index", "Home", new object { }, new { @class = "mainmenu-link" })</li>
+                                <li class="init-un-active">@Html.ActionLink("Content Page", "ContentPage", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                <li class="init-un-active">@Html.ActionLink("Complete Registration", "CompleteRegistration", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                <li class="init-un-active">@Html.ActionLink("Complete Order", "CompleteOrder", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                <li class="init-un-active">@Html.ActionLink("Front Page", "FrontPage", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                <li class="init-un-active">@Html.ActionLink("Front Page Partner", "FrontPagePartner", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                                <li class="init-un-active">@Html.ActionLink("Elements", "Elements", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>                                
+                                <li class="init-un-active">@Html.ActionLink("Modal Collection", "ModalCollection", "Designviews", new object { }, new { @class = "mainmenu-link" })</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+            <div class="nav-bottom">
+                <div class="navbar-login">
+                    <div class="language-link-desktop" style="float:left"><a href="">NORWAY (ENG)</a><span class="word-divider">|</span></div><div style="float:left"><a href="">LOGIN</a></div>
+                </div>
+                <div class="navbar-lang">                    
+                    <div class="partner-link-desktop" style="float:right;"><span class="word-divider">|</span><a href="">PARTNERWEB</a></div>
+                    <div style="float:right; z-index: 2;">
+                        <div class="cart-hover">
+                            <div style="display:table; width: 100%; margin-bottom: 10px;">
+                                <div style="display: table-row">
+                                    <div style="display: table-cell">Your shopping cart</div>
+                                </div>
+                            </div>
+                            <div style="display:table; width:100%; border-collapse: collapse;">
+                                <div style="display:table-row;">
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px 0; vertical-align:middle;"><div class="cart-preview-thumbnail"><img src="~/Content/images/balance-oil-capsules.png" /></div></div>
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px; vertical-align:middle;">Zinzino Dosage Cups, 10 pcs</div>
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px; vertical-align:middle;"><input type="text" class="form-control cart-input" value="1" /></div>
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px; vertical-align:middle;">395,00 kr</div>
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px 0; vertical-align:middle;"><span class="glyphicon glyphicon-trash" style="float: right;"></span></div>
+                                </div>
+                                <div style="display:table-row;">
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px 0; vertical-align:middle;"><div class="cart-preview-thumbnail"><img src="~/Content/images/balance-oil-capsules.png" /></div></div>
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px; vertical-align:middle;">Zinzino Dosage Cups, 10 pcs</div>
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px; vertical-align:middle;"><input type="text" class="form-control cart-input" value="1" /></div>
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px; vertical-align:middle;">395,00 kr</div>
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px 0; vertical-align:middle;"><span class="glyphicon glyphicon-trash" style="float: right;"></span></div>
+                                </div>
+                                <div style="display:table-row;">
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px 0; vertical-align:middle;"><div class="cart-preview-thumbnail"><img src="~/Content/images/balance-oil-capsules.png" /></div></div>
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px; vertical-align:middle;">Zinzino Dosage Cups, 10 pcs</div>
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px; vertical-align:middle;"><input type="text" class="form-control cart-input" value="1" /></div>
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px; vertical-align:middle;">395,00 kr</div>
+                                    <div style="display:table-cell; white-space:nowrap; padding: 6px 0; vertical-align:middle;"><span class="glyphicon glyphicon-trash" style="float: right;"></span></div>
+                                </div>
+                                <div style="display:table-row; height: 10px;"></div>
+                                <div style="display:table-row; border-top: 1px solid #b2b2b2; border-bottom: 1px solid #b2b2b2;">
+                                    <div style="display:table-cell; padding: 0 6px; height: 30px; vertical-align:top;"><div style="position:absolute; line-height: 30px; font-size: 16px;">Total price (3 items)</div></div>
+                                    <div style="display:table-cell; padding: 6px;"></div>
+                                    <div style="display:table-cell; padding: 6px;"></div>
+                                    <div style="display:table-cell; padding: 0 6px; height: 30px; vertical-align:top;"><div style="position:absolute; line-height: 30px; font-size: 16px;">395,00 kr</div></div>
+                                    <div style="display:table-cell; padding: 6px;"></div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div style="display:table; width:100%; border-collapse: collapse; margin: 15px 0 5px 0;">
+                                <div style="display:table-row;">
+                                    <div style="display:table-cell; width: 50%; padding-right: 5px;">
+                                        <button class="btn zinzino-btn" style="width: 100%">GO TO CART</button>
+                                    </div>
+                                    <div style="display:table-cell; width: 50%; padding-left: 5px;">
+                                        <button class="btn zinzino-btn" style="width: 100%;">GO TO CHECKOUT</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                
+                    </div>
+                    <a href="javascript:void(0);" class="cart-link"><span class="glyphicon glyphicon-shopping-cart">&nbsp;<span style="font-family:Calibri;">SHOP</span></span></a>
+                    <a href="~/Designviews/Cart" class="cart-link-mobile"><span class="glyphicon glyphicon-shopping-cart">&nbsp;<span style="font-family:Calibri;">SHOP</span></span></a>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+    @*HEADER - End*@
+
+    <div class="container-fluid body-content @*move-body*@" style="min-height: 700px;">            
+        @RenderBody()
+
+    </div>
+
+    <!-- IMAGE MODAL -->
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="imagepreview">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer id="footer" class="footer solid-bg empty-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-15 col-sm-3" id="footer-col-left">
+                    YOUR HEALTH<br />
+                    Balance test<br />
+                    Our research
+                </div>
+                <div class="col-md-15 col-sm-3" id="footer-col-left">
+                    CUSTOMER SERVICE<br />
+                    Contact sales help<br />
+                    Contact HQ<br />
+                    How to become a customer<br />
+                    FAQ<br />
+                    Sitemap
+                </div>
+                <div class="col-md-15 col-sm-3" id="footer-col-center">
+                    <img src="~/Content/images/Zinzino-grey-logo.png" width="100" />
+                </div>
+                <div class="col-md-15 col-sm-3" id="footer-col-right">
+                    CORPORATE INFO<br />
+                    Business network<br />
+                    Investor relations<br />
+                    Board and Management<br />
+                    Fairtrade<br />
+                    Press
+                </div>
+                <div class="col-md-15 col-sm-3" id="footer-col-right">
+                    BUSINESS OPPORTUNITY<br />
+                    Partner program<br />
+                    How to become a partner
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+    @*@Html.Partial("Partials/_Modals")*@
+
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/respond.js"></script>
+
+    @RenderSection("scripts", required: false)
+    
+    <script src="~/Scripts/jquery.fullPage.js"></script>
+    <script type="text/javascript">
+        $(".cart-link").on("click", function () {
+            // Show cart-preview
+            $('.cart-hover').css('display', 'block');
+            
+            window.setTimeout(function () {
+                $('.cart-hover').css('opacity', '1');
+                $('.cart-hover').css('height', 'auto');
+            }, 200);
+        });
+        $(".cart-hover").on("mouseleave", function () {
+            // Hide cart-preview
+            $('.cart-hover').css('opacity', '0');
+            window.setTimeout(function () {
+                $('.cart-hover').css('display', 'none');
+                $('.cart-hover').css('height', '0');
+            }, 200);
+        });
+
+        $("#pop").on("click", function () {
+            $('#imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
+            $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+        });
+
+
+
+
+        //Shrink the header when scrolling down. Add/Remove classes and change logo
+        if (isFrontPage) {
+            $(window).scroll(function () {
+                if (($(document).scrollTop() > 50)) {
+                    if (!($('.nav-top').hasClass('shrink'))) {
+                        var viewportWidth = $(window).width();
+                        if (viewportWidth > 768) {
+                            $('.zinzino-header-logo').fadeOut();
+                        }
+                        $('.navbar').addClass('shrink');
+                        $('.nav-top').addClass('shrink');
+                        $('.nav-bottom').addClass('shrink');
+                        $('.zinzino-navbar-collapse').addClass('shrink');
+                        $('.navbar-header').addClass('shrink');
+                        $('.navbar-search').addClass('shrink');
+                        $('.navbar-toggle').addClass('shrink');
+                        $('.menutitle').addClass('shrink');
+                        $('.navbar-logo').addClass('shrink');
+                        $('.zinzino-header-logo').addClass('shrink');
+                        if (viewportWidth > 768) {
+                            $('.zinzino-header-logo').finish().delay(80).fadeIn('slow');
+                        }
+                    }
+                } else if (($('.nav-top').hasClass('shrink'))) {
+                    var viewportWidth = $(window).width();
+                    if (viewportWidth > 768) {
+                        $('.zinzino-header-logo').fadeOut();
+                    }
+                    $('.navbar').removeClass('shrink');
+                    $('.nav-top').removeClass('shrink');
+                    $('.nav-bottom').removeClass('shrink');
+                    $('.zinzino-navbar-collapse').removeClass('shrink');
+                    $('.navbar-header').removeClass('shrink');
+                    $('.navbar-search').removeClass('shrink');
+                    $('.navbar-toggle').removeClass('shrink');
+                    $('.menutitle').removeClass('shrink');
+                    $('.navbar-logo').removeClass('shrink');
+                    $('.zinzino-header-logo').removeClass('shrink');
+                    if (viewportWidth > 768) {
+                        $('.zinzino-header-logo').finish().delay(150).fadeIn('slow');
+                    }
+                }
+            });
+        } else {
+            $('.navbar').addClass('shrink');
+            $('.nav-top').addClass('shrink');
+            $('.nav-bottom').addClass('shrink');
+            $('.zinzino-navbar-collapse').addClass('shrink');
+            $('.navbar-header').addClass('shrink');
+            $('.navbar-search').addClass('shrink');
+            $('.navbar-toggle').addClass('shrink');
+            $('.menutitle').addClass('shrink');
+            $('.navbar-logo').addClass('shrink');
+            $('.zinzino-header-logo').addClass('shrink');
+        }
+        
+
+        //Allow details-tab to be collapsed
+        $('#details-tab a').click(function (e) {
+            var tab = $(this);
+            if (tab.parent('li').hasClass('active')) {
+                window.setTimeout(function () {
+                    $(".tab-pane-parent").removeClass('active');
+                    tab.parent('li').removeClass('active');
+                }, 1);
+            }
+        });
+
+        //AUTO-SCROLL TO CONTENT
+        var inscroll = false;
+
+        //Auto-scroll on click
+        $($('div[id=slider-scroll-down-button]')).click(function () {
+            inscroll = true;
+            $('body').scrollTo('#scroll-to-here');
+            setTimeout(function () {
+                inscroll = false;
+            }, 2000);
+        });
+
+        //Detect scroll direction and scroll down to content-section if scrolling down on the first viewport-area.
+        // 'lastScrollTop' and 'st' is to keep track of the scrolling direction.
+        var lastScrollTop = 0;
+        var scrollbarDown = false;
+        var viewPortHeight;
+        var preventScroll = false;
+
+        $(window).scroll(function (e) {
+            if (e.originalEvent.wheelDelta > 0) {
+                console.log('scrolling up !');
+            }
+            else {
+                console.log(e.originalEvent.wheelDelta > 0);
+            }
+            if (!preventScroll) {
+                
+                viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+                var st = $(this).scrollTop();
+                e.preventDefault();
+
+                //Check if mousedown on browsers scrollbar. If so, don't autoscroll (it wont look good)
+                $(document).mousedown(function (event) {
+                    if (event.target === $('html')[0] && event.clientX >= document.documentElement.offsetWidth) {
+                        scrollbarDown = true;
+                    }
+                    else {
+                        scrollbarDown = false;
+                    }
+                }).mouseup(function (event) { scrollbarDown = false; }); //Autoscroll when scrollbar is released.
+
+
+                
+
+                //Autoscroll if it hasn't already started and if scrollBarDown=false.
+                if ((!inscroll) && (scrollbarDown == false) && (isFrontPage)) {
+                    //$('body').scrollTo(viewPortHeight);
+                    //inscroll = true;
+                    
+                    // If viewport is on the first top half of the page and scrolling down - autoscroll to the div with #scroll-to-here
+                    if (($(window).scrollTop() < (viewPortHeight / 2)) && ($(window).scrollTop() > 2) && (st > lastScrollTop)) {
+                        //preventScroll = true;
+                        inscroll = true;
+                        console.log(st + "x" + lastScrollTop);
+                        $('body').scrollTo('#scroll-to-here');
+                        //$("body").preventDefault();
+                        //$("body").animate({ scrollTop: viewPortHeight }, "slow");
+
+                        //$('body').animate({
+                        //    top: viewPortHeight +'px'
+                        //}, 200);
+
+                        //$('body').scrollTo(viewPortHeight);
+                        setTimeout(function () {
+                            inscroll = false;
+                            preventScroll = false;
+                            //enableScroll();
+                        }, 1000);
+                    }
+                        // If viewport is on the second top half of the page and scrolling up - autoscroll to the top
+                    else if (($(window).scrollTop() < viewPortHeight - 10) && ($(window).scrollTop() > (viewPortHeight / 2)) && (st < lastScrollTop)) {
+                        //preventScroll = true;
+                        inscroll = true;
+                        console.log(st + "y" + lastScrollTop);
+                        //$("body").preventDefault();
+                        $("body").animate({ scrollTop: 0 }, "slow");
+                        //$('body').animate({
+                        //    top: '0px'
+                        //}, 200);
+                        //$('body').scrollTo(0);
+                        setTimeout(function () {
+                            inscroll = false;
+                            preventScroll = false;
+                            //enableScroll();
+                        }, 1000);
+                        lastScrollTop = 0;
+                    }
+                }
+                lastScrollTop = st;
+                return false;
+            }
+            
+        });
+    </script>
+    <script type="text/javascript">
+        /******************************************
+            -	PREPARE PLACEHOLDER FOR SLIDER	-
+        ******************************************/
+
+        var setREVStartSize = function () {
+            try {
+                var e = new Object, i = jQuery(window).width(), t = 9999, r = 0, n = 0, l = 0, f = 0, s = 0, h = 0;
+                e.c = jQuery('#rev_slider_7_1');
+                e.responsiveLevels = [1240, 1024, 778, 480];
+                e.gridwidth = [1240, 1024, 778, 480];
+                e.gridheight = [868, 768, 960, 720];
+
+                e.sliderLayout = "fullscreen";
+                e.fullScreenAutoWidth = 'off';
+                e.fullScreenAlignForce = 'off';
+                e.fullScreenOffsetContainer = '.navbar';
+                e.fullScreenOffset = '60px';
+                if (e.responsiveLevels && (jQuery.each(e.responsiveLevels, function (e, f) { f > i && (t = r = f, l = e), i > f && f > r && (r = f, n = e) }), t > r && (l = n)), f = e.gridheight[l] || e.gridheight[0] || e.gridheight, s = e.gridwidth[l] || e.gridwidth[0] || e.gridwidth, h = i / s, h = h > 1 ? 1 : h, f = Math.round(h * f), "fullscreen" == e.sliderLayout) { var u = (e.c.width(), jQuery(window).height()); if (void 0 != e.fullScreenOffsetContainer) { var c = e.fullScreenOffsetContainer.split(","); if (c) jQuery.each(c, function (e, i) { u = jQuery(i).length > 0 ? u - jQuery(i).outerHeight(!0) : u }), e.fullScreenOffset.split("%").length > 1 && void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 ? u -= jQuery(window).height() * parseInt(e.fullScreenOffset, 0) / 100 : void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 && (u -= parseInt(e.fullScreenOffset, 0)) } f = u } else void 0 != e.minHeight && f < e.minHeight && (f = e.minHeight); e.c.closest(".rev_slider_wrapper").css({ height: f })
+
+            } catch (d) { console.log("Failure at Presize of Slider:" + d) }
+        };
+
+
+        setREVStartSize();
+        function revslider_showDoubleJqueryError(sliderID) {
+            var errorMessage = "Revolution Slider Error: You have some jquery.js library include that comes after the revolution files js include.";
+            errorMessage += "<br> This includes make eliminates the revolution slider libraries, and make it not work.";
+            errorMessage += "<br><br> To fix it you can:<br>&nbsp;&nbsp;&nbsp; 1. In the Slider Settings -> Troubleshooting set option:  <strong><b>Put JS Includes To Body</b></strong> option to true.";
+            errorMessage += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jquery.js include and remove it.";
+            errorMessage = "<span style='font-size:16px;color:#BC0C06;'>" + errorMessage + "</span>";
+            jQuery(sliderID).show().html(errorMessage);
+        }
+        var tpj = jQuery;
+
+        var revapi7;
+        tpj(document).ready(function () {
+				if(tpj("#rev_slider_zz").revolution == undefined){
+					revslider_showDoubleJqueryError("#rev_slider_zz");
+				}else{
+					revapi2 = tpj("#rev_slider_zz").show().revolution({
+						sliderType:"standard",
+                        jsFileLocation:"/revolution/js/",
+                        sliderLayout: "fullscreen",
+                        dottedOverlay: "none",
+                        delay: 9000,
+                        navigation: {
+                            keyboardNavigation: "off",
+                            keyboard_direction: "horizontal",
+                            mouseScrollNavigation: "off",
+                            onHoverStop: "off",
+                            touch: {
+                                touchenabled: "on",
+                                swipe_threshold: 75,
+                                swipe_min_touches: 50,
+                                swipe_direction: "horizontal",
+                                drag_block_vertical: false
+                            }
+							,
+                            tabs: {
+                                style: "metis",
+                                enable: true,
+                                width: 250,
+                                height: 40,
+                                min_width: 249,
+                                wrapper_padding: 0,
+                                wrapper_color: "",
+                                wrapper_opacity: "0",
+                                tmp: '<div class="tp-tab-wrapper"><div class="tp-tab-number">{{param1}}</div><div class="tp-tab-divider"></div><div class="tp-tab-title-mask"><div class="tp-tab-title">{{title}}</div></div></div>',
+                                visibleAmount: 5,
+                                hide_onmobile: true,
+                                hide_under: 800,
+                                hide_onleave: false,
+                                hide_delay: 200,
+                                direction: "vertical",
+                                span: true,
+                                position: "inner",
+                                space: 0,
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 0,
+                                v_offset: 0
+                            }
+                        },
+                        responsiveLevels: [1240, 1024, 778, 480],
+                        visibilityLevels: [1240, 1024, 778, 480],
+                        gridwidth: [1240, 1024, 778, 480],
+                        gridheight: [868, 768, 960, 720],
+                        lazyType: "none",
+                        parallax: {
+                            type: "3D",
+                            origo: "slidercenter",
+                            speed: 1000,
+                            levels: [2, 4, 6, 8, 10, 12, 14, 16, 45, 50, 47, 48, 49, 50, 0, 50],
+                            type: "3D",
+                            ddd_shadow: "off",
+                            ddd_bgfreeze: "on",
+                            ddd_overflow: "hidden",
+                            ddd_layer_overflow: "visible",
+                            ddd_z_correction: 100,
+                        },
+                        spinner: "off",
+                        stopLoop: "on",
+                        stopAfterLoops: 0,
+                        stopAtSlide: 1,
+                        shuffle: "off",
+                        autoHeight: "off",
+                        fullScreenAutoWidth: "off",
+                        fullScreenAlignForce: "off",
+                        fullScreenOffsetContainer: "",
+                        fullScreenOffset: "60px",
+                        disableProgressBar: "on",
+                        hideThumbsOnMobile: "off",
+                        hideSliderAtLimit: 0,
+                        hideCaptionAtLimit: 0,
+                        hideAllCaptionAtLilmit: 0,
+                        debugMode: false,
+                        fallbacks: {
+                            simplifyAll: "off",
+                            nextSlideOnWindowFocus: "off",
+                            disableFocusListener: false,
+                        }
+					});
+                }
+        });	/*ready*/
+
+			
+
+            // OPEN/CLOSE MAIN MENU
+			$('#menu-close-button').on('click', function () {
+			    $('.zinzino-navbar-collapse').css('right', '-410px');
+			    //$('.move-body').css('left', '0px');
+			    $('.zinzino-navbar-collapse').toggleClass('show-hide-menu');
+			});
+			$('#menu-open-button').on('click', function () {
+			    if (useDropDownMenu) {
+                    if ($('.zinzino-navbar-collapse').hasClass('show-hide-menu')) {
+			            $('.zinzino-navbar-collapse').css('right', '-410px');
+			            //$('.move-body').css('left', '0px');
+			        } else {
+			            $('.zinzino-navbar-collapse').css('right', '0px');
+			            //$('.move-body').css('left', '-400px');
+			        }
+			        $('.zinzino-navbar-collapse').toggleClass('show-hide-menu');
+			    }
+			    			    
+			});
+    </script>
+    <script type="text/javascript">
+        var openwidth;
+        var jPM;
+        console.log(openwidth);
+        var jRes = jRespond([
+        {
+            label: 'small',
+            enter: 0,
+            exit: 768
+        }, {
+            label: 'large',
+            enter: 768,
+            exit: 10000
+        }
+            ]);
+
+        jRes.addFunc({
+            breakpoint: 'small',
+            enter: function () {
+                openwidth = $(document).width()-65;
+                jPM = $.jPanelMenu({
+                    menu: '#zinzino-main-navbar',
+                    trigger: '.navbar-toggle',
+                    direction: 'right',
+                    //clone: false,
+                    easing: 'ease-out',
+                    openDuration: '350',
+                    closeDuration: '200',
+                    openPosition: openwidth,
+                    excludedPanelContent: '.modal-backdrop',
+                    excludedPanelContent: '#fixed-header'
+                });
+                jPM.on();
+                useDropDownMenu = false;
+                $('.zinzino-navbar-collapse').css('right', '-1800px');
+            },
+            exit: function () {
+                jPM.off();
+                useDropDownMenu = true;
+                $('.zinzino-navbar-collapse').css('right', '-400px');
+            }
+        });
+
+    </script>
+</body>
+</html>
